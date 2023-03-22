@@ -41,11 +41,11 @@ const infoSchema = Joi.object({
   files: Joi.array().items(Joi.any()).length(2),
 });
 
-app.get("/form", (req, res) => {
+app.get("/", (req, res) => {
   res.render("form");
 });
 
-app.post("/form", upload.array("files", 2), async (req, res) => {
+app.post("/", upload.array("files", 2), async (req, res) => {
   const formData = req.body;
   const files = req.files;
 
