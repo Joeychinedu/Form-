@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
   res.render("form");
 });
 
-app.post("/", upload.array("files", 2), async (req, res) => {
+app.post("/form", upload.array("files", 2), async (req, res) => {
   const formData = req.body;
   const files = req.files;
 
