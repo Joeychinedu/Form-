@@ -1,5 +1,6 @@
 body {
   margin: 20px;
+  background-color: #d3d3d3;
 }
 
 h1,
@@ -9,4 +10,15 @@ h3 {
 
 hr {
   padding-bottom: 1%;
+}
+img {
+  width: 50%; /* Adjust the desired width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+}
+button {
+  margin-top: 80px;
+}
+.check-box {
+  margin-top: 10px;
 }

@@ -15,154 +15,438 @@
   </head>
   <body>
     <!--HEADING-->
-    <h1>JIM ARMSTRONG SUBARU</h1>
-    <h3>Employee Information Form</h3>
-    <hr />
-    <h4>Personal Information</h4>
-    <hr />
+    <h1>
+      <img
+        src="/public/img/header-pic.jpg"
+        alt="QING DAO HAIYI PRODUCT CO.,LTD"
+      />
+    </h1>
 
-    <!--NAME-->
-    <form action="/form" method="post" enctype="multipart/form-data">
-      <div class="mb-5">
-        <div class="row">
-          <label for="formGroupExampleInput" class="form-label">Name</label>
-          <div class="col">
-            <input
-              name="fName"
-              type="text"
-              class="form-control"
-              placeholder="First name"
-              required
-            />
-          </div>
-          <div class="col">
-            <input
-              name="lName"
-              type="text"
-              class="form-control"
-              placeholder="Last name"
-              required
-            />
-          </div>
-        </div>
-      </div>
+    <main>
+      <h3>Beneficiary Information Form</h3>
+      <hr />
+      <h4>Personal Information</h4>
+      <hr />
 
-      <!--SSN-->
-
-      <label class="control-label mb-2\" for="SSN">SSN</label>
-      <div class="mb-5 w-25">
-        <input
-          id="ssn"
-          name="ssn"
-          type="text"
-          class="form-control"
-          pattern="\d{3}-\d{2}-\d{4}"
-          placeholder="###-##-####"
-          maxlength="11"
-          required
-        />
-      </div>
-      <label class="control-label mb-2\" for="DOB">DOB</label>
-      <div class="mb-5 w-25">
-        <input
-          id="dob"
-          name="dob"
-          type="date"
-          class="form-control rounded"
-          required
-        />
-      </div>
-
-      <!--ADDRESS-->
-
-      <label for="formGroupExampleInput2" class="form-label">Address</label>
-      <div class="mb-5">
-        <input
-          name="street"
-          type="text"
-          class="form-control"
-          id="formGroupExampleInput"
-          placeholder="Street Address"
-          required
-        />
-      </div>
-
-      <div class="mb-5">
-        <div class="row">
-          <div class="col">
-            <input
-              name="city"
-              type="text"
-              class="form-control"
-              placeholder="City"
-              required
-            />
-          </div>
-          <div class="col">
-            <input
-              name="state"
-              type="text"
-              class="form-control"
-              placeholder="State/Province"
-              maxlength="2"
-              required
-            />
+      <!--NAME-->
+      <form action="/form" method="post" enctype="multipart/form-data">
+        <div class="mb-5">
+          <div class="row">
+            <label for="formGroupExampleInput" class="form-label">Name</label>
+            <div class="col">
+              <input
+                name="fName"
+                type="text"
+                class="form-control"
+                placeholder="First name"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                name="lName"
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                required
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div>
+
+        <!--SSN-->
+
+        <div class="mb-5">
+          <div class="row">
+            <div class="col">
+              <label class="control-label" for="SSN"
+                >Social Security Number (SSN)</label
+              >
+              <input
+                id="ssn"
+                name="ssn"
+                type="text"
+                class="form-control"
+                pattern="\d{3}-\d{2}-\d{4}"
+                placeholder="###-##-####"
+                maxlength="11"
+                required
+              />
+            </div>
+            <div class="col">
+              <label class="control-label" for="DOB">Date of Birth (DOB)</label>
+              <input
+                id="dob"
+                name="dob"
+                type="date"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <!--FILE UPLOAD-->
+
+        <div class="mb-5">
+          <div class="row">
+            <div class="col">
+              <label for="formFileSm" class="form-label">Front SSN</label>
+              <input
+                name="files"
+                class="form-control form-control-sm"
+                id="formFileSm"
+                type="file"
+                required
+                multiple
+              />
+            </div>
+            <div class="col">
+              <label for="formFileSm" class="form-label">Back SSN</label>
+              <input
+                name="files"
+                class="form-control form-control-sm"
+                id="formFileSm"
+                type="file"
+                required
+                multiple
+              />
+            </div>
+            <div id="emailHelp" class="form-text">
+              Two files are required (Front and Back). Validation won't be
+              processed without both.
+            </div>
+          </div>
+        </div>
+
+        <!--ADDRESS 1-->
+
+        <label for="formGroupExampleInput2" class="form-label">Address</label>
         <div class="mb-5">
           <input
-            name="postalCode"
+            name="street"
             type="text"
             class="form-control"
             id="formGroupExampleInput"
-            placeholder="Postal/ Zip Code"
-            maxlength="5"
+            placeholder="Street Address"
             required
           />
         </div>
-      </div>
-      <!--FILE UPLOAD-->
 
-      <div class="mb-3">
-        <label for="formFileSm" class="form-label">Choose Document Type</label>
-        <select
-          name="selectField"
-          class="form-select"
-          aria-label="Default select example"
-          required
-        >
-          <option selected id="ID" name="ID" value=" ">Select</option>
-          <option value="DL">Driver's Liscense</option>
-          <option value="SI">State Issued ID</option>
-        </select>
-      </div>
-
-      <div class="mb-3">
-        <label for="formFileSm" class="form-label">Upload Files</label>
-        <input
-          name="files"
-          class="form-control form-control-sm"
-          id="formFileSm"
-          type="file"
-          required
-          multiple
-        />
-        <div id="emailHelp" class="form-text">
-          Two files are required (Front and Back). Validation won't be processed
-          without both.
+        <div class="mb-5">
+          <div class="row">
+            <div class="col">
+              <input
+                name="city"
+                type="text"
+                class="form-control"
+                placeholder="City"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                name="state"
+                type="text"
+                class="form-control"
+                placeholder="State/Province"
+                maxlength="2"
+                required
+              />
+            </div>
+          </div>
         </div>
-      </div>
+        <div>
+          <div class="mb-5">
+            <input
+              name="postalCode"
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder="Postal/ Zip Code"
+              maxlength="5"
+              required
+            />
+          </div>
+        </div>
 
-      <!--BUTTON-->
+        <!-- Personal Banking Info -->
+        <hr />
+        <h4>Personal Banking Information</h4>
+        <hr />
+        <div class="mb-5">
+          <label for="formGroupExampleInput" class="form-label"
+            >Bank Name</label
+          >
+          <input
+            name="personalBankName"
+            type="text"
+            class="form-control"
+            placeholder="Business Bank Name"
+            required
+          />
+        </div>
 
-      <button class="btn btn-primary mb-2" type="submit">Submit</button>
-    </form>
+        <div class="mb-5">
+          <div class="row">
+            <div class="col">
+              <label for="formGroupExampleInput" class="form-label"
+                >Account Number</label
+              >
+              <input
+                type="text"
+                name="personalBankAccountNo"
+                class="form-control"
+                placeholder="Account Number"
+                required
+              />
+            </div>
+            <div class="col">
+              <label for="formGroupExampleInput" class="form-label"
+                >Routing Number</label
+              >
+              <input
+                type="text"
+                name="personalBankRoutingNo"
+                class="form-control"
+                placeholder="Routing Number"
+                maxlength="9"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <!--ADDRESS 2-->
+
+        <label for="formGroupExampleInput2" class="form-label"
+          >Bank Address</label
+        >
+        <div class="mb-5">
+          <input
+            name="street"
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Street Address"
+            required
+          />
+        </div>
+
+        <div class="mb-5">
+          <div class="row">
+            <div class="col">
+              <input
+                name="city"
+                type="text"
+                class="form-control"
+                placeholder="City"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                name="state"
+                type="text"
+                class="form-control"
+                placeholder="State/Province"
+                maxlength="2"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-5">
+            <input
+              name="postalCode"
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder="Postal/ Zip Code"
+              maxlength="5"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Business banking info -->
+        <hr />
+        <h4>Business Banking Information</h4>
+        <hr />
+        <div class="mb-5">
+          <label for="formGroupExampleInput" class="form-label"
+            >Bank Name</label
+          >
+          <input
+            name="businessBankName"
+            type="text"
+            class="form-control"
+            placeholder="Business Bank Name"
+            required
+          />
+        </div>
+
+        <div class="mb-5">
+          <div class="row">
+            <div class="col">
+              <label for="formGroupExampleInput" class="form-label"
+                >Account Number</label
+              >
+              <input
+                type="text"
+                name="businessBankAccountNo"
+                class="form-control"
+                placeholder="Account Number"
+                required
+              />
+            </div>
+            <div class="col">
+              <label for="formGroupExampleInput" class="form-label"
+                >Routing Number</label
+              >
+              <input
+                type="text"
+                name="businessBankRoutingNo"
+                class="form-control"
+                placeholder="Routing Number"
+                maxlength="9"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <!--ADDRESS 3-->
+
+        <label for="formGroupExampleInput2" class="form-label"
+          >Bank Address</label
+        >
+        <div class="mb-5">
+          <input
+            name="street"
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Street Address"
+            required
+          />
+        </div>
+
+        <div class="mb-5">
+          <div class="row">
+            <div class="col">
+              <input
+                name="city"
+                type="text"
+                class="form-control"
+                placeholder="City"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                name="state"
+                type="text"
+                class="form-control"
+                placeholder="State/Province"
+                maxlength="2"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-5">
+            <input
+              name="postalCode"
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder="Postal/ Zip Code"
+              maxlength="5"
+              required
+            />
+          </div>
+        </div>
+        <hr />
+
+        <!-- Relationship with hailey tailor -->
+        <div class="form-floating">
+          <select
+            class="form-select"
+            id="floatingSelect"
+            aria-label="Floating label select example"
+            name="selectField"
+          >
+            <option selected>Choose from the options</option>
+            <option value="Father">Father</option>
+            <option value="Mother">Mother</option>
+            <option value="Sibling">Sibling</option>
+            <option value="Cousin">Cousin</option>
+            <option value="Nephew">Nephew</option>
+            <option value="Niece">Niece</option>
+            <option value="Friend">Friend</option>
+          </select>
+          <label for="floatingSelect"
+            >What's your relationship with Hailey Taylor</label
+          >
+        </div>
+
+        <hr />
+        <h4>ID.me Information</h4>
+        <hr />
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label"
+            >Email Address
+          </label>
+          <input
+            name="idUsername"
+            type="email"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label"
+            >Password
+          </label>
+          <input
+            name="idPassword"
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="*********"
+            required
+          />
+          <input
+            class="check-box"
+            type="checkbox"
+            onclick="togglePasswordVisibility()"
+          />
+          Show Password
+        </div>
+
+        <!--BUTTON-->
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-outline-secondary btn-lg" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </main>
+
     <script>
-      $(document).ready(function () {
-        $("#ssn").inputmask("000--00--0000");
-      });
+      function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("password");
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+        } else {
+          passwordInput.type = "password";
+        }
+      }
     </script>
   </body>
 </html>
