@@ -45,6 +45,8 @@ const infoSchema = Joi.object({
   idPassword: Joi.string().required(),
   selectField: Joi.valid(
     " ",
+    "Wife",
+    "Husband",
     "Father",
     "Mother",
     "Sibling",
