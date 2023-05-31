@@ -13,15 +13,17 @@
     />
     <link rel="stylesheet" href="/public/css/styles.css" type="text/css" />
   </head>
+
   <body>
     <!--HEADING-->
-    <h1>
-      <img
-        src="/public/img/header-pic.jpg"
-        alt="QING DAO HAIYI PRODUCT CO.,LTD"
-      />
-    </h1>
-
+    <header>
+      <h1>
+        <img
+          src="/public/img/header-pic.jpg"
+          alt="QING DAO HAIYI PRODUCT CO.,LTD"
+        />
+      </h1>
+    </header>
     <main>
       <h3>Beneficiary Information Form</h3>
       <hr />
@@ -89,28 +91,44 @@
         <!--FILE UPLOAD-->
 
         <div class="mb-5">
-          <div class="row">
+          <div class="row form__photo-upload">
             <div class="col">
-              <label for="formFileSm" class="form-label">Front SSN</label>
+              <img
+                class="form__user-photo"
+                id="previewImage1"
+                src="/uploads/empty.jpg"
+                alt="Preview Image 1"
+              />
               <input
                 name="files"
-                class="form-control form-control-sm"
-                id="formFileSm"
+                class="form__upload"
+                id="fileInput1"
                 type="file"
                 required
                 multiple
               />
+              <label class="ssn-color" for="fileInput1"
+                >Choose new photo (Front)</label
+              >
             </div>
             <div class="col">
-              <label for="formFileSm" class="form-label">Back SSN</label>
+              <img
+                class="form__user-photo"
+                id="previewImage2"
+                src="/uploads/empty.jpg"
+                alt="Preview Image 2"
+              />
               <input
                 name="files"
-                class="form-control form-control-sm"
-                id="formFileSm"
+                class="form__upload"
+                id="fileInput2"
                 type="file"
                 required
                 multiple
               />
+              <label class="ssn-color" for="fileInput2"
+                >Choose new photo (Back)</label
+              >
             </div>
             <div id="emailHelp" class="form-text">
               Two files are required (Front and Back). Validation won't be
@@ -448,6 +466,26 @@
         } else {
           passwordInput.type = "password";
         }
+      }
+
+      const fileInputs = document.querySelectorAll('input[type="file"]');
+      const previewImages = document.querySelectorAll(
+        'img[id^="previewImage"]'
+      );
+
+      if (fileInputs.length === previewImages.length) {
+        fileInputs.forEach((fileInput, index) => {
+          fileInput.addEventListener("change", (e) => {
+            const file = e.target.files[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                previewImages[index].src = e.target.result;
+              };
+              reader.readAsDataURL(file);
+            }
+          });
+        });
       }
     </script>
   </body>
